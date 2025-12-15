@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Phish Net 360 </title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files (Bootstrap kept for grid, but styles largely overridden) -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="static/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="{{ url_for('home') }}">Phish Net 360 </a></h1>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="#about" onclick="scrolldiv()">About</a></li>
+          <li><a href="{{ url_for('usecases') }}">Usecases</a></li>
+          <li class="drop-down"><a href="#">Resources</a>
+            <ul>
+              <li><a href="https://safebrowsing.google.com/safebrowsing/report_phish/?hl=en" target="_blank">Report to
+                  Google</a></li>
+              <li><a href="https://www.phishingbox.com/phishing-iq-test" target="_blank">Phishing Quiz</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="static\assets\Phishing Website Identification.pdf" class="get-started-btn scrollto" download>Download
+        Guide</a>
+
+    </div>
+  </header>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="container" data-aos="fade-up">
+      <h1>Detect Fake Websites Instantly</h1>
+      <h2>Protect yourself from phishing attacks with our advanced AI detection.</h2>
+
+      <div class="form">
+        <form action="/result" method="POST">
+          <input type="url" name="name" id="name" placeholder="Paste a URL (http://...)" required autocomplete="off">
+          <button type="submit">Scan URL</button>
+        </form>
+
+        <div class="result-area">
+          {% if name %}
+          <div style="margin-top: 30px;">
+            <p style="font-size: 1.2rem; color: var(--text-muted);">Result for: <b>{{name[0]}}</b></p>
+
+            <h2 class="result-title {{ 'text-safe' if name[1] == 'Safe' else 'text-danger' }}">
+              {{name[1]}}
+            </h2>
+
+            {% if name[3] %}
+            <button class="button1" onclick="window.open('{{name[0]}}')" target="_blank">{{name[2]}}</button>
+            {% else %}
+            <button class="button2" onclick="window.open('{{name[0]}}')" target="_blank">{{name[2]}}</button>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!-- ======= FAQ / Knowledge Section ======= -->
+    <section id="faq" class="faq">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Phishing Knowledge Base</h2>
+          <p style="color: var(--text-muted);">Learn how to stay safe in the digital world</p>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up" data-aos-delay="100">
+              <a data-toggle="collapse" class="collapse" href="#faq-list-1">What is phishing? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-parent=".faq-list">
+                <p>
+                  Phishing is a cybercrime where targets are contacted by email, telephone, or text message by someone
+                  posing as a legitimate institution to lure individuals into providing sensitive data such as
+                  personally identifiable information, banking and credit card details, and passwords.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Why does it matter? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+                <p>
+                  Success Phishing attacks can cause financial loss, identity theft, and compromise entire systems. It
+                  relies on establishing false trust with victims.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <a data-toggle="collapse" href="#faq-list-3" class="collapsed">Common Types of Attacks <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-parent=".faq-list">
+                <p>
+                  <strong>Deceptive Phishing:</strong> Impersonating legitimate companies.<br>
+                  <strong>Spear Phishing:</strong> Targeting specific individuals.<br>
+                  <strong>Smishing:</strong> Phishing via SMS.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <a data-toggle="collapse" href="#faq-list-4" class="collapsed">Prevention for Users <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-parent=".faq-list">
+                <p>
+                  • Choose strong passwords.<br>
+                  • Be wary of urgent messages.<br>
+                  • Verify links before clicking.<br>
+                  • Don't supply personal info via unverified channels.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Phish Net 360 </h2>
+        </div>
+
+        <div class="content"> <!-- Added wrapper for glass effect -->
+          <p style="color: var(--text-muted); font-size: 1.1rem;">
+            Phishing is a deceptive practice where attackers masquerade as trusted entities. Phish Net 360 aims to
+            combat this by providing instant AI-driven URL analysis to distinguish between legitimate and malicious
+            sites.
+          </p>
+
+          <div class="mt-4">
+            <h3>Our Team</h3>
+            <p style="color: white;">Developed by <strong>MOKESH</strong> - II - M.Sc (CS), MTNC.</p>
+            <p style="font-size: 0.9rem; opacity: 0.7;">Guided MOKESH</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+
+  <script>
+    function scrolldiv() {
+      var elem = document.getElementById("about");
+      elem.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+
+</html>

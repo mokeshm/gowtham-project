@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Phish Net 360 | Usecases</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="static/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="{{ url_for('home') }}">Phish Net 360 </a></h1>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="#about" onclick="scrolldiv()">About</a></li>
+          <li class="active"><a href="{{ url_for('usecases') }}">Usecases</a></li>
+          <li class="drop-down"><a href="#">Resources</a>
+            <ul>
+              <li><a href="https://safebrowsing.google.com/safebrowsing/report_phish/?hl=en" target="_blank">Report to
+                  Google</a></li>
+              <li><a href="https://www.phishingbox.com/phishing-iq-test" target="_blank">Phishing Quiz</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="static\assets\Phishing Website Identification.pdf" class="get-started-btn scrollto" download>Download
+        Guide</a>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ======= Usecases Section (Reusing FAQ styles) ======= -->
+    <section id="faq" class="faq" style="padding-top: 120px;">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Data Breach Scenarios</h2>
+          <p style="color: var(--text-muted);">Real-world examples of phishing attacks and their consequences</p>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up" data-aos-delay="100">
+              <a data-toggle="collapse" class="collapse" href="#faq-list-1">1. John Podesta’s Email (2016) <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-parent=".faq-list">
+                <p>
+                  <strong>One of the Biggest Data Breaches from Phishing.</strong><br><br>
+                  There was a lot of controversy surrounding the November 2016 election. One of the most notable was the
+                  hack of John Podesta’s Gmail account. Podesta, chairman of Hillary Clinton’s campaign, was victimized
+                  by a Russian hacker group known as Fancy Bear. The phishers, pretending to be Google, sent an email
+                  claiming he needed to change his password due to an attempted hack. The email linked to a malicious
+                  website, giving hackers access to his account and leading to the release of thousands of emails via
+                  WikiLeaks.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <a data-toggle="collapse" href="#faq-list-2" class="collapsed">2. BenefitMall (2018) <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+                <p>
+                  <strong>Human Resource & Payroll Data Exposure.</strong><br><br>
+                  BenefitMall was affected by a phishing attack between June and October 2018. The company’s website was
+                  accessed via compromised employee email credentials. Exposed information potentially included:
+                  <br><br>
+                  <i class='bx bxs-chevron-right-circle' style="color: var(--accent);"></i> Names<br>
+                  <i class='bx bxs-chevron-right-circle' style="color: var(--accent);"></i> Email addresses<br>
+                  <i class='bx bxs-chevron-right-circle' style="color: var(--accent);"></i> Birth dates<br>
+                  <i class='bx bxs-chevron-right-circle' style="color: var(--accent);"></i> Bank account information<br>
+                  <i class='bx bxs-chevron-right-circle' style="color: var(--accent);"></i> Insurance premium info
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <a data-toggle="collapse" href="#faq-list-3" class="collapsed">3. Sony Pictures (2014) <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-parent=".faq-list">
+                <p>
+                  <strong>State-Sponsored Cyberattack.</strong><br><br>
+                  In retaliation for the movie “The Interview,” a North Korean government-backed group launched a
+                  devastating attack. Using phishing and spear-phishing emails containing malware, attackers gained
+                  access to Sony’s network, performed covert reconnaissance, stole confidential data, and disabled
+                  thousands of computers. The attack is thought to have cost the company upwards of $100 million.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <a data-toggle="collapse" href="#faq-list-4" class="collapsed">4. Methodist Hospitals (2019) <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-parent=".faq-list">
+                <p>
+                  <strong>Healthcare Data Compromise.</strong><br><br>
+                  A phishing attack compromised more than 68,000 patients’ information. Two email accounts were
+                  compromised, exposing names, addresses, health insurance info, Social Security numbers, bank account
+                  numbers, and treatment information.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="500">
+              <a data-toggle="collapse" href="#faq-list-5" class="collapsed">5. University of Wisconsin-Parkside (2019)
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-parent=".faq-list">
+                <p>
+                  <strong>Financial Fraud via Routing Numbers.</strong><br><br>
+                  A phishing attack prompted an employee to change the routing numbers of two vendors. Before the issue
+                  was discovered, the university lost $315,000 in fraudulent bank transfers.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Phish Net 360 </h2>
+        </div>
+
+        <div class="content">
+          <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+            Phish Net 360 is an evolution of the project “Detection of Phishing Website Using Machine Learning”.
+            It aims to help internet users authenticate URLs by testing if they are phishing or legitimate using
+            advanced machine learning models.
+          </p>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <h3 style="font-size: 1.5rem; color: var(--text-main);">Credits</h3>
+              <p style="color: var(--text-muted);">
+                Developed by <strong>MOKESH</strong><br>
+                II - M.Sc (CS) (MTNC)<br>
+                <span style="font-size: 0.9em; opacity: 0.8;">Guided by MOKESH</span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+
+  <script>
+    function scrolldiv() {
+      var elem = document.getElementById("about");
+      elem.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+
+</html>
